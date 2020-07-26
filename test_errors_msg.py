@@ -7,7 +7,7 @@ browser = webdriver.Chrome(options=options)
 
 rp = EcomecrePage(driver=browser)
 
-'''
+
 rp.go()
 rp.sign_in.click()
 rp.email_input.input_text('myemail@gmail.com')
@@ -16,9 +16,9 @@ email_err = rp.invalid_email.text
 assert email_err == 'Invalid email address.'
 print(f'error msg: {email_err}, validated.')
 browser.quit()
-'''
 
-'''
+
+
 rp.go()
 rp.sign_in.click()
 rp.email_input.input_text('email_01_@gmail.com')
@@ -39,7 +39,7 @@ This country requires you to choose a State."
 assert msg_error == expected_error
 print(f'Error message:\n{msg_error},\nvalidated.')
 browser.quit()
-'''
+
 
 
 

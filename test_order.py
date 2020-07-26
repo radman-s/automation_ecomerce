@@ -6,7 +6,6 @@ browser = webdriver.Chrome(options=options)
 
 ep = EcomecrePage(driver=browser)
 
-
 # Test setup
 mail = 'email222@gmail.com'
 passw = 'password'
@@ -22,8 +21,8 @@ ep.sub_tshirt.click()
 ep.product1.move_to()
 ep.more.click()
 ep.q_up.click()
-# ep.size.move_to()
-# ep.size.select_drop('3')
+ep.size.move_to()
+ep.size.select_drop('3')
 ep.color_bl.click()
 ep.add_card.click()
 ep.proceed_1.click()

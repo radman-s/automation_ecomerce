@@ -45,6 +45,7 @@ ec.mobile_phone.input_text(mp)
 ec.alias.input_text(ali)
 ec.register.click()
 browser.quit()
+print('Test successful.')
 
 
 

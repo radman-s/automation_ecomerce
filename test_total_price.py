@@ -7,13 +7,13 @@ browser = webdriver.Chrome(options=options)
 
 ep = EcomecrePage(driver=browser)
 
-# Test: Verify that Total Price is reflecting correctly if user changes
-# quantity on 'Shopping Cart Summary' Page.
 
 # test setup
 mail = 'email222@gmail.com'
 passw = 'password'
 
+# Test: Verify that Total Price is reflecting correctly if user changes
+# quantity on 'Shopping Cart Summary' Page.
 ep.go()
 ep.sign_in.click()
 ep.email_input.input_text(mail)
@@ -28,7 +28,6 @@ ep.add_card.click()
 ep.proceed_1.click()
 
 # compare prices after value change
-
 price1 = ep.total_value.text
 print(f'price one item output: {price1}')
 

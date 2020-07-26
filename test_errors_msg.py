@@ -7,7 +7,7 @@ browser = webdriver.Chrome(options=options)
 
 rp = EcomecrePage(driver=browser)
 
-# Test: Verify error messages for mandatory fields.
+# Test:  Verify invalid email address error.
 rp.go()
 rp.sign_in.click()
 rp.email_input.input_text('myemail@gmail.com')
@@ -17,6 +17,7 @@ assert email_err == 'Invalid email address.'
 print(f'error msg: {email_err}, validated.')
 browser.quit()
 
+# Test: Verify error messages for mandatory fields.
 rp.go()
 rp.sign_in.click()
 rp.email_input.input_text('email_01_@gmail.com')

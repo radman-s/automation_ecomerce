@@ -1,9 +1,7 @@
 from pages.ecomerce_page import EcomecrePage
-from selenium import webdriver
-options = webdriver.ChromeOptions()
-options.add_argument('--start-maximized')
-browser = webdriver.Chrome(options=options)
+from pages.drivers import Drivers
 
+browser = Drivers('--start-maximized').chrome()
 ec = EcomecrePage(driver=browser)
 
 # Test: Verify that 'Add to Wishlist' only works after login.
@@ -16,7 +14,7 @@ error_msg = ec.log_in_err.text
 assert error_msg == 'You must be logged in to manage your wishlist.'
 print(f'{error_msg}, validated.')
 browser.quit()
-
+print('test passed')
 
 
 

@@ -1,9 +1,7 @@
 from pages.ecomerce_page import EcomecrePage
-from selenium import webdriver
-options = webdriver.ChromeOptions()
-options.add_argument('--start-maximized')
-browser = webdriver.Chrome(options=options)
+from pages.drivers import Drivers
 
+browser = Drivers('--start-maximized').chrome()
 ep = EcomecrePage(driver=browser)
 
 # Test
@@ -28,5 +26,5 @@ name2 = ep.product1_name.text
 assert name1 == name2
 print(f'original item name: {name1}\nsearch item name: {name2}.')
 browser.quit()
-
+print('test passed')
 

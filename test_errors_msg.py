@@ -1,10 +1,7 @@
-from selenium import webdriver
+from pages.drivers import Drivers
 from pages.ecomerce_page import EcomecrePage
 
-options = webdriver.ChromeOptions()
-options.add_argument('--start-maximized')
-browser = webdriver.Chrome(options=options)
-
+browser = Drivers('--start-maximized').chrome()
 rp = EcomecrePage(driver=browser)
 
 # Test:  Verify invalid email address error.
@@ -38,6 +35,7 @@ This country requires you to choose a State."
 assert msg_error == expected_error
 print(f'Error message:\n{msg_error},\nvalidated.')
 browser.quit()
+print('test passed')
 
 
 

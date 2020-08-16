@@ -1,10 +1,7 @@
-from selenium import webdriver
+from pages.drivers import Drivers
 from pages.ecomerce_page import EcomecrePage
 
-options = webdriver.ChromeOptions()
-options.add_argument('--start-maximized')
-browser = webdriver.Chrome(options=options)
-
+browser = Drivers('--start-maximized').chrome()
 ec = EcomecrePage(driver=browser)
 
 # test setup
@@ -45,7 +42,7 @@ ec.mobile_phone.input_text(mp)
 ec.alias.input_text(ali)
 ec.register.click()
 browser.quit()
-print('Test successful.')
+print('Test passed.')
 
 
 

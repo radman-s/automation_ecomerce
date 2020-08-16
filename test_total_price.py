@@ -1,12 +1,9 @@
 from pages.ecomerce_page import EcomecrePage
-from selenium import webdriver
+from pages.drivers import Drivers
 import time
-options = webdriver.ChromeOptions()
-options.add_argument('--start-maximized')
-browser = webdriver.Chrome(options=options)
 
+browser = Drivers('--start-maximized').chrome()
 ep = EcomecrePage(driver=browser)
-
 
 # test setup
 mail = 'email222@gmail.com'
@@ -45,7 +42,7 @@ if p2 == expect_val:
 else:
     print(f'value outcome: {p2} not same as expected value: {expect_val}.')
 browser.quit()
-
+print('test passed')
 
 
 

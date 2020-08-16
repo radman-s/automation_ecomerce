@@ -6,8 +6,8 @@ from selenium.webdriver.support.select import Select
 
 class BaseElement(object):
 
-    def __init__(self, dirver, locator):
-        self.driver = dirver
+    def __init__(self, driver, locator):
+        self.driver = driver
         self.locator = locator
         self.web_element = None
         self.find()
